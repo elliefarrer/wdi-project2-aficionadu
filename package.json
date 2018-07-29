@@ -1,0 +1,19 @@
+{
+  "name": "wdi-project2-aficionadu",
+  "version": "1.0.0",
+  "description": "WDI project 2 - restaurant review app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platypotomus/wdi-project2-aficionadu.git"
+  },
+  "author": "Ellie Farrer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/platypotomus/wdi-project2-aficionadu/issues"
+  },
+  "homepage": "https://github.com/platypotomus/wdi-project2-aficionadu#readme"
+}
