@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const morgan = require('morgan');
 const { DB_URI, port } = require('./config/environment');
 
 const mongoose = require('mongoose');
@@ -17,6 +19,15 @@ app.set('views', `${__dirname}/views`);
 app.use(express.static(`${__dirname}/public`));
 
 // Middleware
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride((req) => {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    const method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
 
 // Routes
 const router = require('./config/routes');
