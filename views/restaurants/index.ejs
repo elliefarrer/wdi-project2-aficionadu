@@ -1,0 +1,11 @@
+<h1 class="title is-1">All our restaurants</h1>
+<p class="content"><%= restaurants.length %> yummy restaurants added...so far</p>
+<div class="container">
+  <% restaurants.forEach(restaurant => { %>
+    <a href="/restaurants/<%= restaurant.id %>">
+      <img src=<%= restaurant.photo %> alt=<%= restaurant.name %> />
+      <h2 class="subtitle is-2"><%= restaurant.name %>, <%= restaurant.city %></h2>
+      <h3 class="subtitle is-3"><%= restaurant.description %></h3>
+    </a>
+  <% }) %>
+</div>
