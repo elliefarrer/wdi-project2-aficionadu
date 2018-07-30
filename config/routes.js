@@ -7,4 +7,7 @@ router.get('/', (req, res) => res.render('pages/home'));
 router.route('/restaurants')
   .get(restaurantController.index);
 
+router.route('/restaurants/:id')
+  .get(restaurantController.show);
+
 module.exports = router;

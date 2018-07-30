@@ -1,0 +1,19 @@
+<div class="columns">
+  <div class="column is-one-third">
+    <img src=<%= restaurant.photo %> alt=<%= restaurant.name %> />
+  </div>
+  <div class="column is-two-thirds">
+    <h1 class="title is-1"><%= restaurant.name %></h1>
+    <p><%= restaurant.address %>, <%= restaurant.city %>, <%= restaurant.postcode %></p>
+    <a href="<%= restaurant.url %>">Website</a>
+    <div class="columns">
+      <div class="column is-half">
+        <%= restaurant.description %>
+        <%= restaurant.cuisine %>
+      </div>
+      <div class="column is-half">
+        <%= restaurant.price %>
+      </div>
+    </div>
+  </div>
+</div>

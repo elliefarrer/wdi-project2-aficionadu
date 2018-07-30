@@ -8,6 +8,14 @@ function restaurantsIndex(req, res) {
     });
 }
 
+function restaurantsShow(req, res) {
+  const restaurantId = req.params.id;
+  Restaurant
+    .findById(restaurantId)
+    .then(restaurant => res.render('restaurants/show', { restaurant }));
+}
+
 module.exports = {
-  index: restaurantsIndex
+  index: restaurantsIndex,
+  show: restaurantsShow
 };
