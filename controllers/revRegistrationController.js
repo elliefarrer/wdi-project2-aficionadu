@@ -9,7 +9,7 @@ function revRegistrationsCreate(req, res) {
   User
     .create(req.body)
     .then(user => {
-      console.log('Hello new account', user);
+      console.log('Hello new account 👋', user);
       res.redirect('/');
     })
     .catch(() =>

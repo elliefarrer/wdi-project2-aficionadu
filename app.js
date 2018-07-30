@@ -3,7 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
+const session = require('express-session');
 const { DB_URI, port } = require('./config/environment');
+const flash = require('express-flash');
+const User = require('./models/user');
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -28,6 +31,25 @@ app.use(methodOverride((req) => {
     return method;
   }
 }));
+
+app.use(session({
+  secret: 'HelpImTrappedInTheComputer',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use((req, res, next) => {
+  if(!req.session.userId) return next();
+  User
+    .findById(req.session.userId)
+    .then(user => {
+      res.locals.user = user;
+      res.locals.isLoggedIn = true;
+      next();
+    });
+});
+
+app.use(flash());
 
 // Routes
 const router = require('./config/routes');

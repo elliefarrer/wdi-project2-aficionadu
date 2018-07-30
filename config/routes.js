@@ -3,6 +3,7 @@ const router = express.Router();
 const restaurantController = require('../controllers/restaurantController');
 const restRegistrationController = require('../controllers/restRegistrationController');
 const revRegistrationController = require('../controllers/revRegistrationController');
+const sessionController = require('../controllers/sessionController');
 
 router.get('/', (req, res) => res.render('pages/home'));
 
@@ -27,5 +28,11 @@ router.route('/reviewer-registrations/new')
 
 router.route('/reviewer-registrations')
   .post(revRegistrationController.create);
+
+router.route('/sessions/new')
+  .get(sessionController.new);
+
+router.route('/sessions')
+  .post(sessionController.create);
 
 module.exports = router;

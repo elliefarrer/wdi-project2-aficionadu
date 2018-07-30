@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/platypotomus/wdi-project2-aficionadu#readme",
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-ejs-layouts": "^2.4.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "flash": "^1.1.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0"
