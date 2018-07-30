@@ -17,7 +17,11 @@ Restaurant
       price: '££',
       cuisine: 'Indian',
       photo: 'https://www.akbars.co.uk/sites/default/files/styles/gallery_landscape/public/gallery-images/Akbar%27s-Restaurant-Manchester-4.jpg',
-      url: 'https://www.akbars.co.uk/manchester'
+      url: 'https://www.akbars.co.uk/manchester',
+      comments: [
+        { name: 'g', content: 'Fabulous restaurant! 😎', rating: 5 },
+        { name: 'a', content: 'Loved it! 💖', rating: 5 }
+      ]
     },
     {
       name: 'Archipelago',

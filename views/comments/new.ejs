@@ -1,0 +1,23 @@
+<form action="/restaurants/<%= restaurant.id %>/comments" method="POST">
+  <div class="field">
+    <label class="label" for="content">Add a review</label>
+    <textarea class="textarea" name="content" placeholder="Was the atmosphere buzzing? The service excellent? The garlic bread extra garlic-y?"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="rating">How was your overall experience?</label>
+    <select class="select" name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+
+  <input type="hidden" name="name" value="<%= locals.user.username %>">
+
+  <div class="field">
+    <button class="button is-primary">Submit</button>
+  </div>
+</form>

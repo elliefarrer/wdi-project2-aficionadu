@@ -9,7 +9,9 @@ const restaurantSchema = new mongoose.Schema({
   price: { type: String, required: true, enum: ['£', '££', '£££', '££££']},
   cuisine: { type: String, required: true, enum: ['British', 'American', 'French', 'Spanish', 'Italian', 'Dutch', 'Mexican', 'Chinese', 'Indian', 'fusion', 'vegetarian/vegan', 'other']},
   photo: { type: String, required: true },
-  url: String
+  url: String,
+  comments: [{ name: String, content: String, rating: Number }],
+  totalRating: Number
   // addedBy: String
 });
 
