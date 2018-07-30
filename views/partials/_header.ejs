@@ -4,6 +4,9 @@
   </div>
   <div class="navbar-end">
     <div class="navbar-menu">
+      <% if (locals.isLoggedIn && locals.user.type === 'restaurant') { %>
+        <a class="navbar-item" href="/restaurants/new">Add a Restaurant</a>
+      <% } %>
       <a class="navbar-item" href="/restaurants">Explore</a>
       <% if (locals.isLoggedIn) { %>
         <a class="navbar-item" href="/sessions/delete">Log out <%= locals.user.username %></a>

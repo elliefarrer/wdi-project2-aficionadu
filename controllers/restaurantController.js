@@ -15,7 +15,20 @@ function restaurantsShow(req, res) {
     .then(restaurant => res.render('restaurants/show', { restaurant }));
 }
 
+function restaurantsNew(req, res) {
+  res.render('restaurants/new');
+}
+
+function restaurantsCreate(req, res) {
+  Restaurant
+    .create(req.body)
+    .then(() => res.redirect('/restaurants'))
+    .catch(err => res.status(500).send(err));
+}
+
 module.exports = {
   index: restaurantsIndex,
-  show: restaurantsShow
+  show: restaurantsShow,
+  new: restaurantsNew,
+  create: restaurantsCreate
 };

@@ -1,0 +1,82 @@
+<h1 class="subtitle is-1">Add a Restaurant</h1>
+<form action="/restaurants" method="POST">
+  <div class="field">
+    <label class="label" for="name">Name</label>
+    <div class="control">
+      <input class="input" type="text" name="name">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="address">Address</label>
+    <div class="control">
+      <input class="input" type="text" name="address">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="city">City</label>
+    <div class="control">
+      <input class="input" type="text" name="city">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="postcode">Postcode</label>
+    <div class="control">
+      <input class="input" type="text" name="postcode">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="description">Description</label>
+    <div class="control">
+      <textarea class="textarea" name="description" placeholder="Fabulous restaurant with tasty food that you all should visit!"></textarea>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="price">Price</label>
+    <select class="select" name="price">
+      <option value="£">£</option>
+      <option value="££">££</option>
+      <option value="£££">£££</option>
+      <option value="££££">££££</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label class="label" for="cuisine">Cuisine</label>
+    <select class="select" name="cuisine">
+      <option value="British">British</option>
+      <option value="American">American</option>
+      <option value="French">French</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Italian">Italian</option>
+      <option value="Dutch">Dutch</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Indian">Indian</option>
+      <option value="Mexican">Mexican</option>
+      <option value="fusion">Fusion</option>
+      <option value="vegetarian/vegan">Vegetarian/vegan</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label class="label" for="photo">Photo (URL)</label>
+    <div class="control">
+      <input class="input" type="text" name="photo">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="url">Website</label>
+    <div class="control">
+      <input class="input" type="text" name="url">
+    </div>
+  </div>
+
+  <input type="hidden" name="addedBy" value="<%= user.username %>">
+
+  <button class="button is-primary">Add Restaurant</button>
+</form>

@@ -11,8 +11,8 @@ const restaurantSchema = new mongoose.Schema({
   photo: { type: String, required: true },
   url: String,
   comments: [{ name: String, content: String, rating: Number }],
-  totalRating: Number
-  // addedBy: String
+  totalRating: Number,
+  addedBy: String
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

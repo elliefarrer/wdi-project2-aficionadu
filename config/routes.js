@@ -19,10 +19,15 @@ function secureRoute(req, res, next) {
 router.get('/', (req, res) => res.render('pages/home'));
 
 router.route('/restaurants')
-  .get(restaurantController.index);
+  .get(restaurantController.index)
+  .post(restaurantController.create);
+
+router.route('/restaurants/new')
+  .get(secureRoute, restaurantController.new);
 
 router.route('/restaurants/:id')
   .get(restaurantController.show);
+  
 
 // // TODO: Write this!
 // router.route('/users/:id')
