@@ -21,7 +21,15 @@ function sessionsCreate(req, res) {
     });
 }
 
+function sessionsDelete(req, res) {
+  return req.session.regenerate(() => {
+    req.flash('primary', 'Bye! Hope to see you again soon!');
+    res.redirect('/');
+  });
+}
+
 module.exports = {
   new: sessionsNew,
-  create: sessionsCreate
+  create: sessionsCreate,
+  delete: sessionsDelete
 };

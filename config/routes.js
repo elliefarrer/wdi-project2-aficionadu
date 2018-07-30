@@ -35,4 +35,7 @@ router.route('/sessions/new')
 router.route('/sessions')
   .post(sessionController.create);
 
+router.route('/sessions/delete')
+  .get(sessionController.delete);
+
 module.exports = router;
