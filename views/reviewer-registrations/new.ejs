@@ -1,0 +1,81 @@
+<h1 class="subtitle is-1">Sign Up Reviewer</h1>
+
+<form action="/reviewer-registrations" method="POST">
+  <div class="field">
+    <label class="label" for="fullName">Full Name</label>
+    <div class="control">
+      <input class="input" type="text" name="fullName">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="username">Username</label>
+    <div class="control">
+      <input class="input" type="text" name="username">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="email">Email</label>
+    <div class="control">
+      <input class="input" type="email" name="email">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="password">Password</label>
+    <div class="control">
+      <input class="input" type="password" name="password">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="passowordConfirmation">Confirm Password</label>
+    <div class="control">
+      <input class="input" type="password" name="passwordConfirmation">
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="field">
+    <label class="label" for="city">Town/City</label>
+    <div class="control">
+      <input class="input" type="text" name="city">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="dateOfBirth">Date of Birth</label>
+    <div class="control">
+      <input class="input" type="date" name="dateOfBirth">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="gender">Gender</label>
+    <div class="control">
+      <input type="radio" name="gender" value="Male">Male<br>
+      <input type="radio" name="gender" value="Female">Female<br>
+      <input type="radio" name="gender" value="Other">Other
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="personality">Pick three statements that describe you best</label>
+    <div class="control">
+      <input type="checkbox" name="personality" value="Adventurous eater">Adventurous eater<br>
+      <input type="checkbox" name="personality" value="Party animal">Party animal<br>
+      <input type="checkbox" name="personality" value="Family trip planner">Family trip planner<br>
+      <input type="checkbox" name="personality" value="Vegetarian/vegan">Vegetarian/vegan<br>
+      <input type="checkbox" name="personality" value="Peace and quiet seeker">Peace and quiet seeker<br>
+      <input type="checkbox" name="personality" value="Fine dining fan">Fine dining fan<br>
+      <input type="checkbox" name="personality" value="Health conscious">Health conscious<br>
+      <input type="checkbox" name="personality" value="Comfort food fan">Comfort food fan<br>
+      <input type="checkbox" name="personality" value="Spicy food lover">Spicy food lover<br>
+      <input type="checkbox" name="personality" value="Trendsetter">Trendsetter<br>
+      <input type="checkbox" name="personality" value="Will eat anything and everything">Will eat anything and everything
+    </div>
+  </div>
+  <button class="button is-primary">Sign Up</button>
+</form>

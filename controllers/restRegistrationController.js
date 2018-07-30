@@ -5,7 +5,7 @@ function restRegistrationsNew(req, res) {
 }
 
 function restRegistrationsCreate(req, res) {
-  req.body.type = 'Restaurant';
+  req.body.type = 'restaurant';
   console.log(req.body);
   User
     .create(req.body)
