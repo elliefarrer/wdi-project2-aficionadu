@@ -4,6 +4,17 @@ const restaurantController = require('../controllers/restaurantController');
 const restRegistrationController = require('../controllers/restRegistrationController');
 const revRegistrationController = require('../controllers/revRegistrationController');
 const sessionController = require('../controllers/sessionController');
+const commentController = require('../controllers/commentController');
+
+function secureRoute(req, res, next) {
+  if(!req.session.userId) {
+    return req.session.regenerate(() => {
+      req.flash('primary', 'Oops! Something went wrong. Please log in to continue');
+      res.redirect('/sessions/new');
+    });
+  }
+  return next();
+}
 
 router.get('/', (req, res) => res.render('pages/home'));
 
@@ -37,5 +48,11 @@ router.route('/sessions')
 
 router.route('/sessions/delete')
   .get(sessionController.delete);
+
+router.route('/restaurants/:restaurantId/comments')
+  .post(secureRoute, commentController.create);
+
+router.route('/restaurants/:restaurantId/comments/:commentId')
+  .delete(secureRoute, commentController.delete);
 
 module.exports = router;

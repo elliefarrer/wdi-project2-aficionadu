@@ -1,3 +1,7 @@
+<% if (locals.isLoggedIn) { %>
+  <%- include('new', { restaurant }) %>
+<% } %>
+
 <% restaurant.comments.forEach(comment => { %>
   <div class="columns">
     <div class="column is-11">
