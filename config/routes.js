@@ -25,9 +25,21 @@ router.route('/restaurants')
 router.route('/restaurants/new')
   .get(secureRoute, restaurantController.new);
 
+router.route('/restaurants/:id/edit')
+  .get(secureRoute, restaurantController.edit);
+
+
 router.route('/restaurants/:id')
-  .get(restaurantController.show);
-  
+  .get(restaurantController.show)
+  .put(restaurantController.update)
+  .delete((req, res, next) => {
+    if(req.session.userId) {
+      restaurantController.delete(req, res, next);
+    } else {
+      res.redirect('/sessions/new', { message: 'Oops! Something went wrong. Please log in to continue'});
+    }
+  });
+
 
 // // TODO: Write this!
 // router.route('/users/:id')

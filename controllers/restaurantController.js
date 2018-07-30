@@ -26,9 +26,33 @@ function restaurantsCreate(req, res) {
     .catch(err => res.status(500).send(err));
 }
 
+function restaurantsEdit(req, res) {
+  Restaurant
+    .findById(req.params.id)
+    .then(restaurant => res.render('restaurants/edit', { restaurant }))
+    .catch(err => res.status(404).send(err));
+}
+
+function restaurantsUpdate(req, res) {
+  Restaurant
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(restaurant => res.redirect(`/restaurants/${restaurant.id}`))
+    .catch(err => res.status(500).send(err));
+}
+
+function restaurantsDelete(req, res) {
+  Restaurant
+    .findByIdAndDelete(req.params.id)
+    .then(() => res.redirect('/restaurants'))
+    .catch(err => res.status(404).send(err));
+}
+
 module.exports = {
   index: restaurantsIndex,
   show: restaurantsShow,
   new: restaurantsNew,
-  create: restaurantsCreate
+  create: restaurantsCreate,
+  edit: restaurantsEdit,
+  update: restaurantsUpdate,
+  delete: restaurantsDelete
 };
