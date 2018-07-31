@@ -9,7 +9,7 @@
           <p>📍 <%= user.city %></p>
           <p><%= user.gender %>, born <%= user.dateOfBirth %></p>
           <% user.personality.forEach(feature => { %>
-            <p><%= user.feature %></p>
+            <p class="tag"><%= feature %></p>
           <% }) %>
         <% } %>
       </div>
