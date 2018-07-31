@@ -30,7 +30,6 @@ router.route('/restaurants/new')
 router.route('/restaurants/:id/edit')
   .get(secureRoute, restaurantController.edit);
 
-
 router.route('/restaurants/:id')
   .get(restaurantController.show)
   .put(restaurantController.update)
@@ -42,6 +41,7 @@ router.route('/restaurants/:id')
     }
   });
 
+
 // Restaurant Sign Up
 router.route('/restaurant-registrations/new')
   .get(restRegistrationController.new);
@@ -49,12 +49,14 @@ router.route('/restaurant-registrations/new')
 router.route('/restaurant-registrations')
   .post(restRegistrationController.create);
 
+
 // Reviewer Sign Up
 router.route('/reviewer-registrations/new')
   .get(revRegistrationController.new);
 
 router.route('/reviewer-registrations')
   .post(revRegistrationController.create);
+
 
 // Log In
 router.route('/sessions/new')
@@ -66,12 +68,14 @@ router.route('/sessions')
 router.route('/sessions/delete')
   .get(sessionController.delete);
 
+
 // Reviews
 router.route('/restaurants/:restaurantId/comments')
   .post(secureRoute, commentController.create);
 
 router.route('/restaurants/:restaurantId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
+
 
 // Profile
 router.route('/users/:id/edit')

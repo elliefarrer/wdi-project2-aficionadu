@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema({
   dateOfBirth: String,
   gender: { type: String, enum: ['Male', 'Female', 'Other']},
   personality: [{ type: String, enum: ['Adventurous eater', 'Party animal', 'Family trip planner', 'Vegetarian/vegan', 'Peace and quiet seeker', 'Fine dining fan', 'Health conscious', 'Comfort food fan', 'Trendsetter', 'Will eat anything and everything', 'Spicy food lover']}],
-  profilePic: String
+  profilePic: String,
+  role: { type: String, enum: ['user', 'moderator']}
 });
 
 userSchema.methods.validatePassword = function(password) {
