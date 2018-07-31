@@ -4,8 +4,10 @@
   </div>
   <div class="navbar-end">
     <div class="navbar-menu">
-      <% if (locals.isLoggedIn && locals.user.type === 'restaurant') { %>
-        <a class="navbar-item" href="/restaurants/new">Add a Restaurant</a>
+      <% if (locals.user) { %>
+        <% if (user.type === 'restaurant') { %>
+          <a class="navbar-item" href="/restaurants/new">Add a Restaurant</a>
+        <% } %>
       <% } %>
       <a class="navbar-item" href="/restaurants">Explore</a>
       <% if (locals.isLoggedIn) { %>
