@@ -1,37 +1,38 @@
-
-<div class="columns">
-  <div class="column is-one-third">
-    <div class="box">
-      <% if (user.profilePic) { %>
-        <img src=<%= user.profilePic %> alt=<%= user.username %> />
+<%# if (locals.user) { %>
+  <div class="columns">
+    <div class="column is-one-third">
+      <div class="box">
+        <% if (user.profilePic) { %>
+          <img src=<%= user.profilePic %> alt=<%= user.username %> />
         <% } else { %>
-          <p>No profile picture to display</p>
-          <% } %>
-    </div>
-    <div class="box">
-      <% if (user.type === 'reviewer') { %>
-        <p>📍 <%= user.city %></p>
-        <p><%= user.age %>-year-old <%= user.gender %></p>
-        <% user.personality.forEach(feature => { %>
-          <p><%= user.feature %></p>
-        <% }) %>
-      <% } %>
-    </div>
-    <div class="section">
-      <div class="level">
-        <a class="button is-primary" href="/users/:id/edit">Edit</a>
+            <p>No profile picture to display</p>
+        <% } %>
+      </div>
+      <div class="box">
+        <% if (user.type === 'reviewer') { %>
+          <p>📍 <%= user.city %></p>
+          <p><%= user.gender %>, born <%= user.dateOfBirth %></p>
+          <% user.personality.forEach(feature => { %>
+            <p><%= user.feature %></p>
+          <% }) %>
+        <% } %>
+      </div>
+      <div class="section">
+        <div class="level">
+          <a class="button is-primary" href="/users/:id/edit">Edit</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="column is-two-thirds">
-    <h1 class="title is-1"><%= user.username %>, <%= user.fullName %></h1>
-    <div class="box">
-      <h2 class="subtitle is-1"><%= user.username%>'s Badges</h2>
+    <div class="column is-two-thirds">
+      <h1 class="title is-1"><%= user.username %>, <%= user.fullName %></h1>
+      <div class="box">
+        <h2 class="subtitle is-1">Badges</h2>
+      </div>
+      <div class="box">
+        <h2 class="subtitle is-1">Activity</h2>
+      </div>
     </div>
-    <div class="box">
-      <h2 class="subtitle is-1"><%= user.username%>'s Activity</h2>
-    </div>
-  </div>
 
-</div>
+  </div>
+<%# } %>

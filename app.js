@@ -43,7 +43,8 @@ app.use((req, res, next) => {
   User
     .findById(req.session.userId)
     .then(user => {
-      res.locals.user = user;
+      console.log('Setting locals.user', user);
+      res.locals.currentUser = user;
       res.locals.isLoggedIn = true;
       next();
     });

@@ -26,13 +26,13 @@ userSchema.methods.getReviews = function() {
   // TODO: Check how this works!
 };
 
-userSchema.virtual('age')
-  .get(function() {
-    const currentDate = new Date();
-    const timeDiff = Math.abs(currentDate.getTime() - this.dateOfBirth.getTime());
-    const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    return diffDays;
-  });
+// userSchema.virtual('age')
+//   .get(function() {
+//     const currentDate = new Date();
+//     const timeDiff = Math.abs(currentDate.getTime() - this.dateOfBirth.getTime());
+//     const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+//     return diffDays;
+//   });
 
 userSchema.virtual('passwordConfirmation')
   .set(function(passwordConfirmation) {

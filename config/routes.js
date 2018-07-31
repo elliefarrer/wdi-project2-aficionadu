@@ -77,7 +77,7 @@ router.route('/restaurants/:restaurantId/comments/:commentId')
 // router.route('/users/:userId/edit')
 //   .get(secureRoute, userController.edit);
 
-router.route('/users/:userId')
+router.route('/users/:id')
   .get(secureRoute, userController.show);
 // .put(secureRoute, userController.update);
 

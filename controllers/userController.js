@@ -4,7 +4,10 @@ function usersShow(req, res) {
   const userId = req.params.id;
   User
     .findById(userId)
-    .then(user => res.render('users/show', { user }));
+    .then(user => {
+      console.log('Users show. User is', user);
+      res.render('users/show', { user });
+    });
 }
 
 
