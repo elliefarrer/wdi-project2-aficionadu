@@ -6,6 +6,7 @@ function restRegistrationsNew(req, res) {
 
 function restRegistrationsCreate(req, res) {
   req.body.type = 'restaurant';
+  req.body.profilePic = 'https://www.wythalltheatrecompany.co.uk/wp-content/themes/generatepress_child/images/no_profile_image.jpg';
   console.log(req.body);
   User
     .create(req.body)

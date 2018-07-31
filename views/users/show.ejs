@@ -2,11 +2,7 @@
   <div class="columns">
     <div class="column is-one-third">
       <div class="box">
-        <% if (user.profilePic) { %>
-          <img src=<%= user.profilePic %> alt=<%= user.username %> />
-        <% } else { %>
-            <img src="https://www.wythalltheatrecompany.co.uk/wp-content/themes/generatepress_child/images/no_profile_image.jpg" alt="no profile picture to display">
-        <% } %>
+        <img src=<%= user.profilePic %> alt=<%= user.username %> />
       </div>
       <div class="box">
         <% if (user.type === 'reviewer') { %>
@@ -19,7 +15,7 @@
       </div>
       <div class="section">
         <div class="level">
-          <a class="button is-primary" href="/users/:id/edit">Edit</a>
+          <a class="button is-primary" href="/users/<%= locals.currentUser.id %>/edit">Edit</a>
         </div>
       </div>
     </div>

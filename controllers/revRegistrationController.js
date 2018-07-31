@@ -6,6 +6,7 @@ function revRegistrationsNew(req, res) {
 
 function revRegistrationsCreate(req, res) {
   req.body.type = 'reviewer';
+  req.body.profilePic = 'https://www.wythalltheatrecompany.co.uk/wp-content/themes/generatepress_child/images/no_profile_image.jpg';
   User
     .create(req.body)
     .then(user => {

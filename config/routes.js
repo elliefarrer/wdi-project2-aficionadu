@@ -74,11 +74,11 @@ router.route('/restaurants/:restaurantId/comments/:commentId')
   .delete(secureRoute, commentController.delete);
 
 // Profile
-// router.route('/users/:userId/edit')
-//   .get(secureRoute, userController.edit);
+router.route('/users/:id/edit')
+  .get(secureRoute, userController.edit);
 
 router.route('/users/:id')
-  .get(secureRoute, userController.show);
-// .put(secureRoute, userController.update);
+  .get(secureRoute, userController.show)
+  .put(secureRoute, userController.update);
 
 module.exports = router;
