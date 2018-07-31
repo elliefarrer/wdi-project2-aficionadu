@@ -19,8 +19,8 @@ Restaurant
       photo: 'https://www.akbars.co.uk/sites/default/files/styles/gallery_landscape/public/gallery-images/Akbar%27s-Restaurant-Manchester-4.jpg',
       url: 'https://www.akbars.co.uk/manchester',
       comments: [
-        { name: 'g', content: 'Fabulous restaurant! 😎', rating: 5, imgUrl: 'https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg' },
-        { name: 'a', content: 'Loved it! 💖', rating: 5, imgUrl: 'http://legacy.semantic-ui.com/images/demo/photo.jpg' }
+        { name: 'g', content: 'Fabulous restaurant! 😎', rating: 5, date: 'Mon Jul 30 2018 08:00:00 GMT+0100 (British Summer Time)', imgUrl: 'https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg' },
+        { name: 'a', content: 'Loved it! 💖', rating: 5, date: 'Tue Jul 31 2018 18:18:51 GMT+0100 (British Summer Time)', imgUrl: 'http://legacy.semantic-ui.com/images/demo/photo.jpg' }
       ]
     },
     {

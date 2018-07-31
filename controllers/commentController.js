@@ -1,6 +1,7 @@
 const Restaurant = require('../models/restaurant');
 
 function commentsCreate(req, res) {
+  req.body.date = Date();
   Restaurant
     .findById(req.params.restaurantId)
     .then(restaurant => {
