@@ -1,11 +1,11 @@
-<%# if (locals.user) { %>
+
   <div class="columns">
     <div class="column is-one-third">
       <div class="box">
         <% if (user.profilePic) { %>
           <img src=<%= user.profilePic %> alt=<%= user.username %> />
         <% } else { %>
-            <p>No profile picture to display</p>
+            <img src="https://www.wythalltheatrecompany.co.uk/wp-content/themes/generatepress_child/images/no_profile_image.jpg" alt="no profile picture to display">
         <% } %>
       </div>
       <div class="box">
@@ -35,4 +35,3 @@
     </div>
 
   </div>
-<%# } %>
