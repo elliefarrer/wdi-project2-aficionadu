@@ -1,20 +1,22 @@
 <div class="columns">
   <div class="column is-one-third">
     <img src=<%= restaurant.photo %> alt=<%= restaurant.name %> />
-    <% if (locals.isLoggedIn && locals.user.username === restaurant.addedBy) { %>
-      <div class="section">
-        <div class="level">
-          <div class="level-left">
-            <a class="button is-primary" href="/restaurants/<%= restaurant.id %>/edit">Edit</a>
-          </div>
-          <div class="level-right">
-            <form action="/restaurants/<%= restaurant.id %>" method="POST">
-              <button class="button is-primary">Delete</button>
-              <input type="hidden" name="_method" value="DELETE">
-            </form>
+    <% if (locals.currentUser) { %>
+      <% if (currentUser.username === restaurant.addedBy) { %>
+        <div class="section">
+          <div class="level">
+            <div class="level-left">
+              <a class="button is-primary" href="/restaurants/<%= restaurant.id %>/edit">Edit</a>
+            </div>
+            <div class="level-right">
+              <form action="/restaurants/<%= restaurant.id %>" method="POST">
+                <button class="button is-primary">Delete</button>
+                <input type="hidden" name="_method" value="DELETE">
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      <% } %>
     <% } %>
   </div>
   <div class="column is-two-thirds">
