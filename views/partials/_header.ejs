@@ -5,6 +5,9 @@
   <div class="navbar-end">
     <div class="navbar-menu">
       <% if (locals.currentUser) { %>
+        <% if (currentUser.role === 'moderator') { %>
+          <a class="navbar-item" href="/moderations">Moderate Comments</a>
+        <% } %>
         <% if (currentUser.type === 'restaurant') { %>
           <a class="navbar-item" href="/restaurants/new">Add a Restaurant</a>
         <% } %>

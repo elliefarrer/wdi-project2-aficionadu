@@ -1,5 +1,12 @@
 <form action="/restaurants/<%= restaurant.id %>/comments" method="POST">
   <div class="field">
+    <label class="label" for="headline">Headline</label>
+    <div class="control">
+      <input class="input" type="text" name="headline" placeholder="In a few words, what really stood out for you?">
+    </div>
+  </div>
+
+  <div class="field">
     <label class="label" for="content">Add a review</label>
     <textarea class="textarea" name="content" placeholder="Was the atmosphere buzzing? The service excellent? The garlic bread extra garlic-y?"></textarea>
   </div>
@@ -13,6 +20,13 @@
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
+  </div>
+
+  <div class="field">
+    <label class="label" for="imgUrl">Photo</label>
+    <div class="control">
+      <input class="input" type="text" name="imgUrl">
+    </div>
   </div>
 
   <input type="hidden" name="name" value="<%= currentUser.username %>">

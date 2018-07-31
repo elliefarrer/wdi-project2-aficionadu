@@ -1,0 +1,17 @@
+<h1 class="title is-1">Moderate Comments</h1>
+
+
+<div class="columns">
+  <% restaurant.comments.forEach(comment => { %>
+    <% if (!comment.moderated) { %>
+      <div class="column is-11">
+        <p>
+          <span class="commenter"><%= comment.name %> says:
+          </span>
+          <%= comment.content %>
+          <%= comment.rating %>⭐️
+        </p>
+      </div>
+    <% } %>
+  <% }) %>
+</div>

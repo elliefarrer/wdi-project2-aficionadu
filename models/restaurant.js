@@ -12,14 +12,23 @@ const restaurantSchema = new mongoose.Schema({
   url: String,
   comments: [{
     name: String,
+    headline: String,
     content: String,
     rating: Number,
-    imgUrl: String
+    imgUrl: String,
+    moderated: false
   }],
-  totalRating: Number,
   addedBy: String
 });
 
-
+restaurantSchema.virtual('averageRating')
+  .get(function() {
+    const array = [];
+    array.push(this.comments['rating']);
+    function getSum(total, num) {
+      return total + num;
+    }
+    return array.reduce(getSum) / array.length;
+  });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

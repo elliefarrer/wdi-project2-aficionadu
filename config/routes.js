@@ -6,6 +6,7 @@ const revRegistrationController = require('../controllers/revRegistrationControl
 const sessionController = require('../controllers/sessionController');
 const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
+const moderationController = require('../controllers/moderationController');
 
 function secureRoute(req, res, next) {
   if(!req.session.userId) {
@@ -84,5 +85,11 @@ router.route('/users/:id/edit')
 router.route('/users/:id')
   .get(secureRoute, userController.show)
   .put(secureRoute, userController.update);
+
+
+// Moderation
+router.route('/moderations')
+  .get(secureRoute, moderationController.index);
+
 
 module.exports = router;

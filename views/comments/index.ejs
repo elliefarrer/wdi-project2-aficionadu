@@ -3,22 +3,25 @@
 <% } %>
 
 <% restaurant.comments.forEach(comment => { %>
-  <div class="columns">
-    <div class="column is-11">
-      <p>
-        <span class="commenter"><%= comment.name %> says:
-        </span>
-        <%= comment.content %>
-        <%= comment.rating %>⭐️
-      </p>
+  <% if (!comment.moderated) { %>
+    <div class="columns">
+      <div class="column is-11">
+        <p>
+          <span class="commenter"><%= comment.name %> says:
+          </span>
+          <%= comment.headline %>
+          <%= comment.content %>
+          <%= comment.rating %>⭐️
+        </p>
+      </div>
+      <div class="column is-1">
+        <% if(locals.currentUser && currentUser.username === comment.name) { %>
+          <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="tag is-delete"></button>
+          </form>
+        <% } %>
+      </div>
     </div>
-    <div class="column is-1">
-      <% if(locals.currentUser && currentUser.username === comment.name) { %>
-        <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="tag is-delete"></button>
-        </form>
-      <% } %>
-    </div>
-  </div>
+  <% } %>
 <% }) %>
