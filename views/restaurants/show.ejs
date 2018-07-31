@@ -1,7 +1,7 @@
 <div class="columns">
   <div class="column is-one-third">
     <img src=<%= restaurant.photo %> alt=<%= restaurant.name %> />
-    <% if (locals.isLoggedIn) { %>
+    <% if (locals.isLoggedIn && locals.user.username === restaurant.addedBy) { %>
       <div class="section">
         <div class="level">
           <div class="level-left">
@@ -21,7 +21,7 @@
     <h1 class="title is-1"><%= restaurant.name %></h1>
     <p><%= restaurant.address %>, <%= restaurant.city %>, <%= restaurant.postcode %></p>
     <a href="<%= restaurant.url %>">Website</a>
-    <p>Added by <%= user.username %></p>
+    <p>Added by <%= restaurant.addedBy %></p>
     <div class="columns">
       <div class="column is-half">
         <%= restaurant.description %>

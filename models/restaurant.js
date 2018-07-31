@@ -10,7 +10,12 @@ const restaurantSchema = new mongoose.Schema({
   cuisine: { type: String, required: true, enum: ['British', 'American', 'French', 'Spanish', 'Italian', 'Dutch', 'Mexican', 'Chinese', 'Indian', 'fusion', 'vegetarian/vegan', 'other']},
   photo: { type: String, required: true },
   url: String,
-  comments: [{ name: String, content: String, rating: Number }],
+  comments: [{
+    name: String,
+    content: String,
+    rating: Number,
+    imgUrl: String
+  }],
   totalRating: Number,
   addedBy: String
 });

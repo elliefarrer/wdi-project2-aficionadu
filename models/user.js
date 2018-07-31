@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const Restaurant = require('./restaurant');
 
 const userSchema = new mongoose.Schema({
   fullName: { type: String, required: true },
@@ -10,12 +11,28 @@ const userSchema = new mongoose.Schema({
   city: String,
   dateOfBirth: String,
   gender: { type: String, enum: ['Male', 'Female', 'Other']},
-  personality: [{ type: String, enum: ['Adventurous eater', 'Party animal', 'Family trip planner', 'Vegetarian/vegan', 'Peace and quiet seeker', 'Fine dining fan', 'Health conscious', 'Comfort food fan', 'Trendsetter', 'Will eat anything and everything', 'Spicy food lover']}]
+  personality: [{ type: String, enum: ['Adventurous eater', 'Party animal', 'Family trip planner', 'Vegetarian/vegan', 'Peace and quiet seeker', 'Fine dining fan', 'Health conscious', 'Comfort food fan', 'Trendsetter', 'Will eat anything and everything', 'Spicy food lover']}],
+  profilePic: String
 });
 
 userSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
+
+userSchema.methods.getReviews = function() {
+  Restaurant
+    .find({ 'comments.name': this.username })
+    .then(results => console.log('Here is what we found', results));
+  // TODO: Check how this works!
+};
+
+userSchema.virtual('age')
+  .get(function() {
+    const currentDate = new Date();
+    const timeDiff = Math.abs(currentDate.getTime() - this.dateOfBirth.getTime());
+    const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return diffDays;
+  });
 
 userSchema.virtual('passwordConfirmation')
   .set(function(passwordConfirmation) {
@@ -36,7 +53,9 @@ userSchema.post('validate', function() {
 });
 
 userSchema.pre('save', function(next) {
-  this.password = bcrypt.hashSync(this.password, 8);
+  if (this.isModified('password')) {
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
   next();
 });
 

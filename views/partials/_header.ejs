@@ -9,6 +9,7 @@
       <% } %>
       <a class="navbar-item" href="/restaurants">Explore</a>
       <% if (locals.isLoggedIn) { %>
+        <a class="navbar-item" href="/users/<%= locals.user.id %>">Profile</a>
         <a class="navbar-item" href="/sessions/delete">Log out <%= locals.user.username %></a>
       <% } else { %>
         <a class="navbar-item" href="/sessions/new">Log in</a>
