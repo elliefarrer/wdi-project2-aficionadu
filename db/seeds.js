@@ -286,3 +286,42 @@ Restaurant
   .then(restaurants => console.log(`Added ${restaurants.length} yummy restaurants`))
   .catch(err => console.log(err))
   .finally(() => mongoose.connection.close());
+
+
+const User = require('../models/user');
+User.collection.drop();
+
+User
+  .create([
+    {
+      fullName: 'Ellie Farrer',
+      username: 'elliefarrer',
+      email: 'elliefarrermusic@gmail.com',
+      password: 'pass',
+      passwordConfirmation: 'pass',
+      type: 'reviewer',
+      city: 'London',
+      gender: 'Female',
+      dateOfBirth: '1995-02-22',
+      personality: [ 'Fine dining fan', 'Adventurous eater', 'Will eat anything and everything'],
+      profilePic: 'https://media.licdn.com/dms/image/C5603AQEhna5-6Fb-4g/profile-displayphoto-shrink_200_200/0?e=1538611200&v=beta&t=LVVkfe_HXwYQnmBtS6S9kDxdqjNqJjKqS55zkXXE4iI',
+      role: 'moderator'
+    },
+    {
+      fullName: 'Jasmine',
+      username: 'jasminelondon',
+      email: 'jasmine@aficionadu.com',
+      password: 'j',
+      passwordConfirmation: 'j',
+      type: 'reviewer',
+      city: 'London',
+      gender: 'Female',
+      dateOfBirth: '1993-04-01',
+      personality: ['Adventurous eater', 'Spicy food lover', 'Comfort food fan'],
+      profilePic: 'http://thysistas.com/wp-content/uploads/2014/10/2014-SmilingBlackWoman.jpeg',
+      role: 'user'
+    }
+  ])
+  .then(users => console.log(`Added ${users.length} users`))
+  .catch(err => console.log(err))
+  .finally(() => mongoose.connection.close());
