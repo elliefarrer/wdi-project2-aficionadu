@@ -1,6 +1,9 @@
 $navbar-background-color: #fedc3d;
 $column-gap: 0.5rem;
 $section-padding: 0.5rem 0;
+$is-info: #01abaa;
+$is-warning: #fedc3d;
+$danger: #fea680;
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -12,6 +15,7 @@ body {
   }
   .peach {
     background-color: #fea680;
+    color: #ffffff;
   }
   a {
     color: #01abaa;

@@ -1,82 +1,88 @@
 <h1 class="subtitle is-1">Add a Restaurant</h1>
 <form action="/restaurants" method="POST">
   <div class="field">
-    <label class="label" for="name">Name</label>
+    <label class="label is-size-5" for="name">Name</label>
     <div class="control">
-      <input class="input" type="text" name="name">
+      <input class="input" type="text" name="name" placeholder="The most important part!">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="address">Address</label>
+    <label class="label is-size-5" for="address">Address</label>
     <div class="control">
-      <input class="input" type="text" name="address">
+      <input class="input" type="text" name="address" placeholder="Let us know where we can find you">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="city">City</label>
+    <label class="label is-size-5" for="city">City</label>
     <div class="control">
-      <input class="input" type="text" name="city">
+      <input class="input" type="text" name="city" placeholder="'High Street??' What High Street where?!">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="postcode">Postcode</label>
+    <label class="label is-size-5" for="postcode">Postcode</label>
     <div class="control">
-      <input class="input" type="text" name="postcode">
+      <input class="input" type="text" name="postcode" placeholder="It's 2018, we use Google Maps and satnav">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="description">Description</label>
+    <label class="label is-size-5" for="description">Description</label>
     <div class="control">
-      <textarea class="textarea" name="description" placeholder="Fabulous restaurant with tasty food that you all should visit!"></textarea>
+      <textarea class="textarea" name="description" placeholder="Tell everyone why your restaurant is awesome and amazing and why everyone should visit!"></textarea>
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="price">Price</label>
-    <select class="select" name="price">
-      <option value="£">£</option>
-      <option value="££">££</option>
-      <option value="£££">£££</option>
-      <option value="££££">££££</option>
-    </select>
-  </div>
-
-  <div class="field">
-    <label class="label" for="cuisine">Cuisine</label>
-    <select class="select" name="cuisine">
-      <option value="British">British</option>
-      <option value="American">American</option>
-      <option value="French">French</option>
-      <option value="Spanish">Spanish</option>
-      <option value="Italian">Italian</option>
-      <option value="Dutch">Dutch</option>
-      <option value="Chinese">Chinese</option>
-      <option value="Indian">Indian</option>
-      <option value="Mexican">Mexican</option>
-      <option value="fusion">Fusion</option>
-      <option value="vegetarian/vegan">Vegetarian/vegan</option>
-    </select>
-  </div>
-
-  <div class="field">
-    <label class="label" for="photo">Photo (URL)</label>
-    <div class="control">
-      <input class="input" type="text" name="photo">
+    <label class="label is-size-5" for="price">Price</label>
+    <div class="select">
+      <select name="price">
+        <option value="-">---</option>
+        <option value="£">£</option>
+        <option value="££">££</option>
+        <option value="£££">£££</option>
+        <option value="££££">££££</option>
+      </select>
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="url">Website</label>
+    <label class="label is-size-5" for="cuisine">Cuisine</label>
+    <div class="select is-normal">
+      <select name="cuisine">
+        <option value="-">---</option>
+        <option value="British">British</option>
+        <option value="American">American</option>
+        <option value="French">French</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Italian">Italian</option>
+        <option value="Dutch">Dutch</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Indian">Indian</option>
+        <option value="Mexican">Mexican</option>
+        <option value="fusion">Fusion</option>
+        <option value="vegetarian/vegan">Vegetarian/vegan</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label is-size-5" for="photo">Photo (URL)</label>
     <div class="control">
-      <input class="input" type="text" name="url">
+      <input class="input" type="text" name="photo" placeholder="Add a URL of a picture of your most beautiful dish (yes, it's hard to pick only one!)">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label is-size-5" for="url">Website</label>
+    <div class="control">
+      <input class="input" type="text" name="url" placeholder="Incoming table reservations...">
     </div>
   </div>
 
   <input type="hidden" name="addedBy" value="<%= currentUser.username %>">
 
-  <button class="button is-primary">Add Restaurant</button>
+  <button class="button peach">Add Restaurant</button>
 </form>
