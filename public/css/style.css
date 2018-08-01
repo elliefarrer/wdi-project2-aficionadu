@@ -1,4 +1,9 @@
 body {
-  background-color: red; }
+  font-family: 'Nunito', sans-serif;
+  color: #000000; }
+  body .navbar {
+    background-color: #fedc3d; }
+    body .navbar .navbar-brand .title {
+      font-family: 'Gochi Hand', cursive; }
 
 /*# sourceMappingURL=style.css.map */
