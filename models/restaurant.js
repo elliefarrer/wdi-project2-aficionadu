@@ -7,7 +7,7 @@ const restaurantSchema = new mongoose.Schema({
   postcode: { type: String, required: true},
   description: { type: String, required: true},
   price: { type: String, required: true, enum: ['£', '££', '£££', '££££']},
-  cuisine: { type: String, required: true, enum: ['British', 'American', 'French', 'Spanish', 'Italian', 'Dutch', 'Mexican', 'Chinese', 'Indian', 'fusion', 'vegetarian/vegan', 'other']},
+  cuisine: { type: String, required: true, enum: ['British', 'American', 'French', 'Spanish', 'Italian', 'Dutch', 'Mexican', 'Chinese', 'Indian', 'Fusion', 'Vegetarian/vegan', 'Other']},
   photo: { type: String, required: true },
   url: String,
   comments: [{
