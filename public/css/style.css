@@ -1,6 +1,13 @@
 body {
   font-family: 'Nunito', sans-serif;
   color: #000000; }
+  body .azure {
+    background-color: #01abaa;
+    color: #ffffff; }
+  body .peach {
+    background-color: #fea680; }
+  body a {
+    color: #01abaa; }
   body .navbar {
     background-color: #fedc3d; }
     body .navbar .navbar-brand .title {

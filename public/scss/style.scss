@@ -6,6 +6,16 @@ body {
   font-family: 'Nunito', sans-serif;
   color: #000000;
   ////// HEADER
+  .azure {
+    background-color: #01abaa;
+    color: #ffffff;
+  }
+  .peach {
+    background-color: #fea680;
+  }
+  a {
+    color: #01abaa;
+  }
   .navbar {
     background-color: $navbar-background-color;
     .navbar-brand {

@@ -1,37 +1,42 @@
 <form action="/restaurants/<%= restaurant.id %>/comments" method="POST">
   <div class="field">
-    <label class="label" for="headline">Headline</label>
+    <label class="label is-size-5" for="headline">Headline</label>
     <div class="control">
       <input class="input" type="text" name="headline" placeholder="In a few words, what really stood out for you?">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="content">Add a review</label>
+    <label class="label is-size-5" for="content">Add a review</label>
     <textarea class="textarea" name="content" placeholder="Was the atmosphere buzzing? The service excellent? The garlic bread extra garlic-y?"></textarea>
   </div>
 
   <div class="field">
-    <label for="rating">How was your overall experience?</label>
-    <select class="select" name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
+    <label class="label is-size-5" for="rating">How was your overall experience?</label>
+    <div class="control">
+      <div class="select is-medium azure">
+        <select name="rating">
+          <option value="-">---</option>
+          <option value="1">1⭐️</option>
+          <option value="2">2⭐️</option>
+          <option value="3">3⭐️</option>
+          <option value="4">4⭐️</option>
+          <option value="5">5⭐️</option>
+        </select>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <label class="label" for="imgUrl">Photo</label>
+  <div class="field ">
+    <label class="label is-size-5" for="imgUrl">Photo</label>
     <div class="control">
-      <input class="input" type="text" name="imgUrl">
+      <input class="input" type="text" name="imgUrl" placeholder="Add a URL to your photo of the food or restaurant">
     </div>
   </div>
 
   <input type="hidden" name="name" value="<%= currentUser.username %>">
 
   <div class="field">
-    <button class="button is-primary">Submit</button>
+    <button class="button azure">Submit</button>
   </div>
 </form>
