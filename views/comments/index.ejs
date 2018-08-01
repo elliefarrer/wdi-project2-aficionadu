@@ -2,44 +2,45 @@
   <%- include('new', { restaurant }) %>
 <% } %>
 
+<div class="section">
+  <% restaurant.comments.forEach(comment => { %>
+    <% if (comment.moderated) { %>
+      <div class="columns">
+          <div class="column is-11">
+            <p class="has-text-weight-bold is-size-4"><%= comment.headline %>, <%= comment.rating %>⭐️</p>
+            <p>
+              <span class="commenter has-text-weight-semibold"><%= comment.name %> says:
+              </span>
+              <%= comment.content %>
+            </p>
+            <p></p>
+            <p>Posted on <%= comment.date %></p>
 
-<% restaurant.comments.forEach(comment => { %>
-  <% if (comment.moderated) { %>
-    <div class="columns">
-      <div class="section">
-        <div class="column is-11">
-          <p>
-            <span class="commenter"><%= comment.name %> says:
-            </span>
-            <%= comment.headline %>
-            <%= comment.content %>
-            <%= comment.rating %>⭐️
-            Posted on <%= comment.date %>
-          </p>
 
-          <form action="/restaurants/<%= restaurant.id %>/comments" method="POST">
-            <div class="field">
-              <div class="control">
-                <input class="button" type="submit" name="comments.vote" value="1" placeholder="💖">
+            <form action="/restaurants/<%= restaurant.id %>/comments" method="POST">
+              <div class="field">
+                <div class="control">
+                  <input class="button" type="submit" name="comments.vote" value="1" placeholder="💖">
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <input type="hidden" name="_method" value="PUT">
-            </div>
-          </form>
-
-          <p><%= comment.vote %>
-
-        </div>
-        <div class="column is-1">
-          <% if(locals.currentUser && currentUser.username === comment.name) { %>
-            <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <button class="tag is-delete"></button>
+              <div class="field">
+                <input type="hidden" name="_method" value="PUT">
+              </div>
             </form>
-          <% } %>
-        </div>
+
+            <p><%= comment.vote %>
+
+          </div>
+          <div class="column is-1">
+            <% if(locals.currentUser && currentUser.username === comment.name) { %>
+              <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="tag is-delete"></button>
+              </form>
+            <% } %>
+          </div>
       </div>
-    </div>
-  <% } %>
-<% }) %>
+      <hr />
+    <% } %>
+  <% }) %>
+</div>
