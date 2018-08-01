@@ -4,6 +4,8 @@ $section-padding: 0.5rem 0;
 $is-info: #01abaa;
 $is-warning: #fedc3d;
 $danger: #fea680;
+$navbar-item-hover-color: #ffffff;
+$navbar-item-hover-background-color: #01abaa;
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -19,6 +21,11 @@ body {
     color: #ffffff;
     border: none;
   }
+  .yellow {
+    background-color: #fedc3d;
+    color: #000000;
+    border: none;
+  }
   a {
     color: #01abaa;
   }
@@ -27,6 +34,16 @@ body {
     .navbar-brand {
       .title {
         font-family: 'Gochi Hand', cursive;
+      }
+    }
+    .navbar-end {
+      .navbar-menu {
+        .navbar-item {
+          .is-hover {
+            background-color: $navbar-item-hover-background-color;
+            color: $navbar-item-hover-color;
+          }
+        }
       }
     }
   }

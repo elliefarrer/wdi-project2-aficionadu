@@ -9,12 +9,19 @@ body {
     background-color: #fea680;
     color: #ffffff;
     border: none; }
+  body .yellow {
+    background-color: #fedc3d;
+    color: #000000;
+    border: none; }
   body a {
     color: #01abaa; }
   body .navbar {
     background-color: #fedc3d; }
     body .navbar .navbar-brand .title {
       font-family: 'Gochi Hand', cursive; }
+    body .navbar .navbar-end .navbar-menu .navbar-item .is-hover {
+      background-color: #01abaa;
+      color: #ffffff; }
   body .columns {
     margin: 0; }
     body .columns .column .is-large {
