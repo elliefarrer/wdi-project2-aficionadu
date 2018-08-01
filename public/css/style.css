@@ -5,5 +5,11 @@ body {
     background-color: #fedc3d; }
     body .navbar .navbar-brand .title {
       font-family: 'Gochi Hand', cursive; }
+  body .columns {
+    margin: 0; }
+    body .columns .column .is-large {
+      margin: 1rem 0; }
+  body .section {
+    padding: 0.5rem 0; }
 
 /*# sourceMappingURL=style.css.map */

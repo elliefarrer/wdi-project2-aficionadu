@@ -1,18 +1,7 @@
 <div class="columns">
   <div class="column is-one-third">
     <img class="image is-large" src=<%= restaurant.photo %> alt=<%= restaurant.name %> />
-    <div class="section">
-      <h2 class="subtitle is-3 has-text-centered">Reviewer Photos</h2>
-      <div class="columns is-multiline is-gapless">
-        <% restaurant.comments.forEach(comment => { %>
-          <% if (comment.moderated) { %>
-            <div class="column is-one-third">
-              <img class="image is-128x128" src=<%= comment.imgUrl %> />
-            </div>
-          <% } %>
-        <% }) %>
-      </div>
-    </div>
+
     <% if (locals.currentUser) { %>
       <% if (currentUser.username === restaurant.addedBy) { %>
         <div class="section">
@@ -32,20 +21,41 @@
     <% } %>
   </div>
   <div class="column is-two-thirds">
-    <h1 class="title is-1"><%= restaurant.name %></h1>
-    <p><%= restaurant.address %>, <%= restaurant.city %>, <%= restaurant.postcode %></p>
-    <a href="<%= restaurant.url %>">Website</a>
-    <p>Added by <%= restaurant.addedBy %></p>
-    <div class="columns">
-      <div class="column is-half">
-        <%= restaurant.description %>
-        <%= restaurant.cuisine %>
-      </div>
-      <div class="column is-half">
-        <%= restaurant.price %>
-        <%= restaurant.averageRating %> ⭐️
+    <div class="section">
+      <h1 class="title is-1 is-uppercase"><%= restaurant.name %></h1>
+    </div>
+    <div class="section">
+      <div class="columns">
+        <div class="column is-half">
+          <p><%= restaurant.address %>, <%= restaurant.city %>, <%= restaurant.postcode %></p>
+          <p><a href="<%= restaurant.url %>">Website</a></p>
+          <p>Added by <%= restaurant.addedBy %></p>
+          <h3 class="subtitle is-5"><%= restaurant.description %></h3>
+        </div>
+        <div class="column is-half has-text-right">
+          <h3 class="subtitle is-4"><%= restaurant.averageRating %> ⭐️</h3>
+          <h3 class="subtitle is-5"><%= restaurant.cuisine %></h3>
+          <h3 class="subtitle is-5"><%= restaurant.price %></h3>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<%- include('../comments/index', { restaurant }) %>
+<div class="columns">
+  <div class="column is-one-third">
+    <h2 class="subtitle is-3 has-text-left">Reviewer Photos</h2>
+    <div class="columns is-multiline is-gapless">
+      <% restaurant.comments.forEach(comment => { %>
+        <% if (comment.moderated) { %>
+          <div class="column is-one-third">
+            <img class="image is-128x128" src=<%= comment.imgUrl %> />
+          </div>
+        <% } %>
+      <% }) %>
+    </div>
+  </div>
+  <div class="column is-two-thirds">
+    <h2 class="subtitle is-3 has-text-left">Add a Review</h2>
+    <%- include('../comments/index', { restaurant }) %>
+  </div>
+</div>

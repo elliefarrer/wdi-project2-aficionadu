@@ -24,7 +24,7 @@ const restaurantSchema = new mongoose.Schema({
 
 restaurantSchema.virtual('averageRating')
   .get(function() {
-    return (this.comments.reduce((sum, comment) => sum + comment.rating, 0) / this.comments.length).toFixed(2);
+    return (this.comments.reduce((sum, comment) => sum + comment.rating, 0) / this.comments.length).toFixed(1);
   });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

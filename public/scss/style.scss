@@ -1,5 +1,6 @@
 $navbar-background-color: #fedc3d;
 $column-gap: 0.5rem;
+$section-padding: 0.5rem 0;
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -12,5 +13,16 @@ body {
         font-family: 'Gochi Hand', cursive;
       }
     }
+  }
+  .columns {
+    margin: 0;
+    .column {
+      .is-large {
+        margin: 1rem 0;
+      }
+    }
+  }
+  .section {
+    padding: $section-padding;
   }
 }
