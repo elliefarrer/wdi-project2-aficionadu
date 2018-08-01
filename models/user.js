@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const Restaurant = require('./restaurant');
 
 const userSchema = new mongoose.Schema({
   fullName: { type: String, required: true },
@@ -20,20 +19,32 @@ userSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-userSchema.methods.getReviews = function() {
-  Restaurant
-    .find({ 'comments.name': this.username })
-    .then(results => console.log('Here is what we found', results));
-  // TODO: Check how this works!
-};
+// userSchema.methods.getReviews = function() {
+//   Restaurant
+//     .find({ 'comments.name': this.username })
+//     .then(results => console.log('Here is what we found', results));
+//   // TODO: Check how this works!
+// };
 
-// userSchema.virtual('age')
-//   .get(function() {
-//     const currentDate = new Date();
-//     const timeDiff = Math.abs(currentDate.getTime() - this.dateOfBirth.getTime());
-//     const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-//     return diffDays;
-//   });
+// userSchema.methods.getReviews = function() {
+//   Restaurant
+//     .find({ 'comments.name': this.username })
+//     .then(results => {
+//       console.log('Here is what we found', results.comments);
+//     });
+// };
+
+// userSchema.methods.reviewsCreated = function() {
+//   return Restaurant
+//     .find()
+//     .then(restaurants => {
+//       return restaurants
+//         .reduce((arr, restaurant) =>
+//           arr.concat(restaurant.comments), [])
+//         .filter(comment => comment.name.toString() === this.id.toString());
+//     });
+// };
+
 
 userSchema.virtual('passwordConfirmation')
   .set(function(passwordConfirmation) {

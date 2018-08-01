@@ -1,17 +1,40 @@
 <h1 class="title is-1">Moderate Comments</h1>
 
 
-<div class="columns">
-  <% restaurant.comments.forEach(comment => { %>
-    <% if (!comment.moderated) { %>
-      <div class="column is-11">
-        <p>
-          <span class="commenter"><%= comment.name %> says:
-          </span>
-          <%= comment.content %>
-          <%= comment.rating %>⭐️
-        </p>
-      </div>
+
+
+<div class="columns is-multiline">
+  <% restaurants.forEach(restaurant => { %>
+    <% if (restaurant.comments) { %>
+      <% restaurant.comments.forEach(comment => { %>
+        <% if (!comment.moderated) { %>
+          <div class="column is-10">
+            <p>
+              <span class="commenter"><%= comment.name %> says:
+              </span>
+              <%= comment.content %>
+              <%= comment.moderated %>
+              <%= comment.rating %>⭐️
+            </p>
+          </div>
+
+          <div class="column is-1">
+          <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
+            <div class="field">
+              <button class="tag" name="comment.moderated" value="true"></button>
+              <input type="hidden" name="_method" value="PATCH">
+            </div>
+          </form>
+          </div>
+
+          <div class="column is-1">
+          <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="tag is-delete"></button>
+          </form>
+          </div>
+        <% } %>
+      <% }) %>
     <% } %>
   <% }) %>
 </div>

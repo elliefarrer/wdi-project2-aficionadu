@@ -3,8 +3,9 @@ const Restaurant = require('../models/restaurant');
 function moderationIndex(req, res) {
   Restaurant
     .find()
-    .then(restaurant => {
-      res.render('moderations/index', { restaurant });
+    .then(restaurants => {
+      console.log(restaurants);
+      res.render('moderations/index', { restaurants });
     });
 }
 

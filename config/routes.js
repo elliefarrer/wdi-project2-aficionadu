@@ -75,6 +75,8 @@ router.route('/restaurants/:restaurantId/comments')
   .post(secureRoute, commentController.create);
 
 router.route('/restaurants/:restaurantId/comments/:commentId')
+  .put(secureRoute, commentController.update)
+  .patch(secureRoute, commentController.setModerated)
   .delete(secureRoute, commentController.delete);
 
 

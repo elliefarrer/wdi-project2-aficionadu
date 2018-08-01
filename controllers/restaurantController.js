@@ -34,6 +34,7 @@ function restaurantsEdit(req, res) {
 }
 
 function restaurantsUpdate(req, res) {
+  console.log(req.body);
   Restaurant
     .findByIdAndUpdate(req.params.id, req.body)
     .then(restaurant => res.redirect(`/restaurants/${restaurant.id}`))
