@@ -1,77 +1,83 @@
-<h1 class="subtitle is-1">Edit <%= restaurant.name %>, <%= restaurant.city %></h1>
+<h1 class="subtitle is-1">Edit <%= restaurant.name %>, <%= restaurant.postcode %></h1>
 
 <form action="/restaurants/<%= restaurant.id %>" method="POST">
   <div class="field">
-    <label class="label" for="name">Name</label>
+    <label class="label is-size-5" for="name">Name</label>
     <div class="control">
       <input class="input" type="text" name="name" value="<%= restaurant.name %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="address">Address</label>
+    <label class="label is-size-5" for="address">Address</label>
     <div class="control">
       <input class="input" type="text" name="address" value="<%= restaurant.address %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="city">City</label>
+    <label class="label is-size-5" for="city">City</label>
     <div class="control">
       <input class="input" type="text" name="city" value="<%= restaurant.city %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="postcode">Postcode</label>
+    <label class="label is-size-5" for="postcode">Postcode</label>
     <div class="control">
       <input class="input" type="text" name="postcode" value="<%= restaurant.postcode %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="description">Description</label>
+    <label class="label is-size-5" for="description">Description</label>
     <div class="control">
-      <textarea class="textarea" name="description" value="<%= restaurant.description %>"></textarea>
+      <textarea class="textarea" name="description" value="<%= restaurant.description %>" placeholder="<%= restaurant.description %>"></textarea>
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="price">Price</label>
-    <select class="select" name="price" value="<%= restaurant.price %>">
-      <option value="£">£</option>
-      <option value="££">££</option>
-      <option value="£££">£££</option>
-      <option value="££££">££££</option>
-    </select>
+    <label class="label is-size-5" for="price">Price</label>
+    <div class="select">
+      <select class="select" name="price" value="<%= restaurant.price %>">
+        <option value="-">---</option>
+        <option value="£">£</option>
+        <option value="££">££</option>
+        <option value="£££">£££</option>
+        <option value="££££">££££</option>
+      </select>
+    </div>
   </div>
 
   <div class="field">
-    <label class="label" for="cuisine">Cuisine</label>
-    <select class="select" name="cuisine" value="<%= restaurant.cuisine %>">
-      <option value="British">British</option>
-      <option value="American">American</option>
-      <option value="French">French</option>
-      <option value="Spanish">Spanish</option>
-      <option value="Italian">Italian</option>
-      <option value="Dutch">Dutch</option>
-      <option value="Chinese">Chinese</option>
-      <option value="Indian">Indian</option>
-      <option value="Mexican">Mexican</option>
-      <option value="fusion">Fusion</option>
-      <option value="vegetarian/vegan">Vegetarian/vegan</option>
-    </select>
+    <label class="label is-size-5" for="cuisine">Cuisine</label>
+    <div class="select">
+      <select class="select" name="cuisine" value="<%= restaurant.cuisine %>">
+        <option value="-">---</option>
+        <option value="British">British</option>
+        <option value="American">American</option>
+        <option value="French">French</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Italian">Italian</option>
+        <option value="Dutch">Dutch</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Indian">Indian</option>
+        <option value="Mexican">Mexican</option>
+        <option value="fusion">Fusion</option>
+        <option value="vegetarian/vegan">Vegetarian/vegan</option>
+      </select>
+    </div>
   </div>
 
   <div class="field">
-    <label class="label" for="photo">Photo (URL)</label>
+    <label class="label is-size-5" for="photo">Photo (URL)</label>
     <div class="control">
       <input class="input" type="text" name="photo" value="<%= restaurant.photo %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="url">Website</label>
+    <label class="label is-size-5" for="url">Website</label>
     <div class="control">
       <input class="input" type="text" name="url" value="<%= restaurant.url %>">
     </div>
@@ -79,5 +85,5 @@
 
   <input type="hidden" name="_method" value="PUT">
 
-  <button class="button is-primary">Edit Restaurant</button>
+  <button class="button peach">Edit Restaurant</button>
 </form>

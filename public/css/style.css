@@ -3,10 +3,12 @@ body {
   color: #000000; }
   body .azure {
     background-color: #01abaa;
-    color: #ffffff; }
+    color: #ffffff;
+    border: none; }
   body .peach {
     background-color: #fea680;
-    color: #ffffff; }
+    color: #ffffff;
+    border: none; }
   body a {
     color: #01abaa; }
   body .navbar {
