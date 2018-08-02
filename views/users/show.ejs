@@ -6,10 +6,10 @@
       </div>
       <div class="section">
         <% if (user.type === 'reviewer') { %>
-          <p>📍 <%= user.city %></p>
+          <p><span><i class="fas fa-map-marker-alt"></i></span> <%= user.city %></p>
           <p><%= user.gender %>, born <%= user.dateOfBirth %></p>
           <% user.personality.forEach(feature => { %>
-            <p class="tag is-normal azure"><%= feature %></p>
+            <p class="tag is-medium azure"><span><i class="fas fa-tags"></i></span><span><%= feature %></span></p>
           <% }) %>
         <% } %>
       </div>

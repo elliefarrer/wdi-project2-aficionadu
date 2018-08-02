@@ -51,6 +51,8 @@ body {
     padding: 0.5rem 0; }
     body .section .title {
       margin-left: 0.75rem; }
+    body .section .tag {
+      margin: 0.25rem 0; }
   body .box {
     box-shadow: 0 2px 3px #fea680, 0 0 0 1px #fea680; }
     body .box .title {
