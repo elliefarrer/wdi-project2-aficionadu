@@ -7,11 +7,11 @@
         <div class="section">
           <div class="level">
             <div class="level-left">
-              <a class="button azure" href="/restaurants/<%= restaurant.id %>/edit">Edit</a>
+              <a class="button azure" href="/restaurants/<%= restaurant.id %>/edit"><span class="icon is-small"><i class="fas fa-edit"></i></span><span>Edit</span></a>
             </div>
             <div class="level-right">
               <form action="/restaurants/<%= restaurant.id %>" method="POST">
-                <button class="button peach">Delete</button>
+                <button class="button peach"><span class="icon is-small"><i class="fas fa-trash-alt"></i></span><span>Delete</span></button>
                 <input type="hidden" name="_method" value="DELETE">
               </form>
             </div>
