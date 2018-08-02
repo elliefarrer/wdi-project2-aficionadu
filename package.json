@@ -4,6 +4,8 @@
   "description": "WDI project 2 - restaurant review app",
   "main": "app.js",
   "scripts": {
+    "start": "node app",
+    "refresh": "node db/seeds",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

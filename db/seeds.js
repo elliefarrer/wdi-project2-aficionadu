@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { DB_URI } = require('../config/environment');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/aficionadu');
+mongoose.connect(DB_URI);
 
 const Restaurant = require('../models/restaurant');
 
