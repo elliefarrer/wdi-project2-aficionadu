@@ -25,6 +25,20 @@ body {
     body .navbar .navbar-end .navbar-menu .navbar-item .is-hover {
       background-color: #01abaa;
       color: #ffffff; }
+  body .hero .hero-body .title {
+    color: #000000;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    animation: welcome 5s infinite; }
+@keyframes welcome {
+  0% {
+    font-size: 5rem; }
+  50% {
+    font-size: 5.25rem; }
+  100% {
+    font-size: 5rem; } }
+  body .hero .hero-body .container .home {
+    margin: 0.25rem 0; }
   body .columns {
     margin: 0; }
     body .columns .title {

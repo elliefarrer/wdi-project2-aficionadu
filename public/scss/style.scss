@@ -32,6 +32,7 @@ body {
   a {
     color: #fea680;
   }
+
   .navbar {
     background-color: $is-warning;
     margin-bottom: 1rem;
@@ -49,6 +50,33 @@ body {
             background-color: $navbar-item-hover-background-color;
             color: $navbar-item-hover-color;
           }
+        }
+      }
+    }
+  }
+
+  .hero {
+    .hero-body {
+      .title {
+        color: #000000;
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        animation: welcome 5s infinite;
+      }
+      @keyframes welcome {
+        0% {
+          font-size: 5rem;
+        }
+        50% {
+          font-size: 5.25rem;
+        }
+        100% {
+          font-size: 5rem;
+        }
+      }
+      .container {
+        .home {
+          margin: 0.25rem 0;
         }
       }
     }
