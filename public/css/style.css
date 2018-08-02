@@ -1,5 +1,5 @@
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   color: #000000; }
   body .azure {
     background-color: #01abaa;
@@ -15,10 +15,14 @@ body {
     border: none; }
   body a {
     color: #01abaa; }
+  body .field {
+    color: #fea680; }
   body .navbar {
     background-color: #fedc3d; }
     body .navbar .navbar-brand .title {
-      font-family: 'Gochi Hand', cursive; }
+      font-family: 'Gochi Hand', cursive;
+      padding: 0.25rem 0.5rem;
+      font-size: 5rem; }
     body .navbar .navbar-end .navbar-menu .navbar-item .is-hover {
       background-color: #01abaa;
       color: #ffffff; }
