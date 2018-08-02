@@ -14,7 +14,7 @@ function sessionsCreate(req, res) {
         res.status(401).render('sessions/new', { message: 'Oops! Something went wrong...'
         });
       } else {
-        req.flash('primary', `Welcome back ${user.username}`);
+        req.flash('peach', `Welcome back ${user.username}`);
         req.session.userId = user.id;
         res.redirect('/restaurants');
       }
@@ -23,7 +23,7 @@ function sessionsCreate(req, res) {
 
 function sessionsDelete(req, res) {
   return req.session.regenerate(() => {
-    req.flash('primary', 'Bye! Hope to see you again soon!');
+    req.flash('peach', 'Bye! Hope to see you again soon!');
     res.redirect('/');
   });
 }

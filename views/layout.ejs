@@ -15,8 +15,8 @@
     <div class="container">
 
       <% for (const type in locals.messages) { %>
-        <div class="message is-<%= type %>">
-          <div class="message-body">
+        <div class="message">
+          <div class="message-body <%= type %>">
             <%= messages[type] %>
           </div>
         </div>
