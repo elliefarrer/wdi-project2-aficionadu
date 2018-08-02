@@ -30,7 +30,13 @@ body {
     margin: 0; }
     body .columns .column .is-large {
       margin: 1rem 0; }
+    body .columns .column .badge {
+      opacity: .3; }
   body .section {
     padding: 0.5rem 0; }
+  body footer {
+    background-color: #fedc3d;
+    padding: 2rem 0;
+    margin-top: 4rem; }
 
 /*# sourceMappingURL=style.css.map */

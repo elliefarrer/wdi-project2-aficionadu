@@ -6,6 +6,7 @@ $is-warning: #fedc3d;
 $red: #fea680 !default;
 $navbar-item-hover-color: #ffffff;
 $navbar-item-hover-background-color: #01abaa;
+$footer-background-color: #fedc3d;
 
 body {
   font-family: 'Oxygen', sans-serif;
@@ -33,7 +34,7 @@ body {
     color: #fea680;
   }
   .navbar {
-    background-color: $navbar-background-color;
+    background-color: $is-warning;
     .navbar-brand {
       .title {
         font-family: 'Gochi Hand', cursive;
@@ -58,9 +59,17 @@ body {
       .is-large {
         margin: 1rem 0;
       }
+      .badge {
+        opacity: .3;
+      }
     }
   }
   .section {
     padding: $section-padding;
+  }
+  footer {
+    background-color: $footer-background-color;
+    padding: 2rem 0;
+    margin-top: 4rem;
   }
 }
