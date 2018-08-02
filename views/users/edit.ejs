@@ -2,28 +2,28 @@
 
 <form action="/users/<%= locals.currentUser.id %>" method="POST">
   <div class="field">
-    <label class="label" for="profilePic">Profile Photo</label>
+    <label class="label is-size-5" for="profilePic">Profile Photo</label>
     <div class="control">
       <input class="input" type="text" name="profilePic" value="<%= user.profilePic %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="fullName">Full Name</label>
+    <label class="label is-size-5" for="fullName">Full Name</label>
     <div class="control">
       <input class="input" type="text" name="fullName" value="<%= user.fullName %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="username">Username</label>
+    <label class="label is-size-5" for="username">Username</label>
     <div class="control">
       <input class="input" type="text" name="username" value="<%= user.username %>">
     </div>
   </div>
 
   <div class="field">
-    <label class="label" for="email">Email</label>
+    <label class="label is-size-5" for="email">Email</label>
     <div class="control">
       <input class="input" type="email" name="email" value="<%= user.email %>">
     </div>
@@ -33,21 +33,21 @@
     <hr />
 
     <div class="field">
-      <label class="label" for="city">Town/City</label>
+      <label class="label is-size-5" for="city">Town/City</label>
       <div class="control">
         <input class="input" type="text" name="city" value="<%= user.city %>">
       </div>
     </div>
 
     <div class="field">
-      <label class="label" for="dateOfBirth">Date of Birth</label>
+      <label class="label is-size-5" for="dateOfBirth">Date of Birth</label>
       <div class="control">
         <input class="input" type="date" name="dateOfBirth" value="<%= user.dateOfBirth %>">
       </div>
     </div>
 
     <div class="field">
-      <label class="label" for="gender">Gender</label>
+      <label class="label is-size-5" for="gender">Gender</label>
       <div class="control">
         <input type="radio" name="gender" value="Male">Male<br>
         <input type="radio" name="gender" value="Female">Female<br>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="field">
-      <label class="label" for="personality">Pick three statements that describe you best</label>
+      <label class="label is-size-5" for="personality">Pick three statements that describe you best</label>
       <div class="control">
         <input type="checkbox" name="personality" value="Adventurous eater">Adventurous eater<br>
         <input type="checkbox" name="personality" value="Party animal">Party animal<br>
@@ -75,5 +75,5 @@
 
   <input type="hidden" name="_method" value="PUT">
 
-  <button class="button is-primary">Edit Profile</button>
+  <button class="button peach">Edit Profile</button>
 </form>
