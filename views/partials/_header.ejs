@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="dropdown navigation">
   <div class="navbar-brand">
       <a class="title is-1" href="/restaurants">aficionadu</a>
   </div>
@@ -13,12 +13,20 @@
         <% } %>
       <% } %>
       <a class="navbar-item" href="/restaurants">Explore</a>
+
       <% if (locals.isLoggedIn) { %>
-        <a class="navbar-item" href="/users/<%= locals.currentUser.id %>">Profile</a>
-        <a class="navbar-item" href="/sessions/delete">Log out <%= locals.currentUser.username %></a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"><img class="image is-rounded" src=<%=locals.currentUser.profilePic %> /></a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="/users/<%= locals.currentUser.id %>">Profile</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="/sessions/delete">Log out <%= locals.currentUser.username %></a>
+          </div>
+        </div>
       <% } else { %>
         <a class="navbar-item" href="/sessions/new">Log in</a>
       <% } %>
+
     </div>
   </div>
 </nav>
