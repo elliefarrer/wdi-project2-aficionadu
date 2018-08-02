@@ -7,6 +7,8 @@ $red: #fea680 !default;
 $navbar-item-hover-color: #ffffff;
 $navbar-item-hover-background-color: #01abaa;
 $footer-background-color: #fedc3d;
+$box-background-color: #fea680;
+$box-shadow: 0 2px 3px #fea680, 0 0 0 1px #fea680;
 
 body {
   font-family: 'Oxygen', sans-serif;
@@ -28,13 +30,14 @@ body {
     border: none;
   }
   a {
-    color: #01abaa;
+    color: #fea680;
   }
   .field {
     color: #fea680;
   }
   .navbar {
     background-color: $is-warning;
+    margin-bottom: 1rem;
     .navbar-brand {
       .title {
         font-family: 'Gochi Hand', cursive;
@@ -55,6 +58,9 @@ body {
   }
   .columns {
     margin: 0;
+    .title {
+      color: $is-info;
+    }
     .column {
       .is-large {
         margin: 1rem 0;
@@ -66,6 +72,16 @@ body {
   }
   .section {
     padding: $section-padding;
+    .title {
+      margin-left: 0.75rem;
+    }
+  }
+  .box {
+    box-shadow: $box-shadow;
+    .title {
+      color: $is-info;
+      margin-left: 0.75rem;
+    }
   }
   footer {
     background-color: $footer-background-color;

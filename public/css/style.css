@@ -14,11 +14,12 @@ body {
     color: #000000;
     border: none; }
   body a {
-    color: #01abaa; }
+    color: #fea680; }
   body .field {
     color: #fea680; }
   body .navbar {
-    background-color: #fedc3d; }
+    background-color: #fedc3d;
+    margin-bottom: 1rem; }
     body .navbar .navbar-brand .title {
       font-family: 'Gochi Hand', cursive;
       padding: 0.25rem 0.5rem;
@@ -28,12 +29,21 @@ body {
       color: #ffffff; }
   body .columns {
     margin: 0; }
+    body .columns .title {
+      color: #01abaa; }
     body .columns .column .is-large {
       margin: 1rem 0; }
     body .columns .column .badge {
       opacity: .3; }
   body .section {
     padding: 0.5rem 0; }
+    body .section .title {
+      margin-left: 0.75rem; }
+  body .box {
+    box-shadow: 0 2px 3px #fea680, 0 0 0 1px #fea680; }
+    body .box .title {
+      color: #01abaa;
+      margin-left: 0.75rem; }
   body footer {
     background-color: #fedc3d;
     padding: 2rem 0;
