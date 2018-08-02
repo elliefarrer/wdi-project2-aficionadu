@@ -9,6 +9,7 @@
       <% restaurant.comments.forEach(comment => { %>
         <% if (!comment.moderated) { %>
           <div class="column is-10">
+            <p class="has-text-weight-bold is-size-4"><%= comment.headline %>, <%= comment.rating %>⭐️</p>
             <p>
               <span class="commenter"><%= comment.name %> says:
               </span>
@@ -16,12 +17,13 @@
               <%= comment.moderated %>
               <%= comment.rating %>⭐️
             </p>
+            <img class="image is-96x96" src=<%= comment.imgUrl %> alt=<%= comment.name %> />
           </div>
 
           <div class="column is-1">
           <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
             <div class="field">
-              <button class="tag" name="comment.moderated" value="true"></button>
+              <button class="tag is-medium azure" name="comment.moderated" value="true">👍</button>
               <input type="hidden" name="_method" value="PATCH">
             </div>
           </form>
@@ -30,7 +32,7 @@
           <div class="column is-1">
           <form action="/restaurants/<%= restaurant.id %>/comments/<%= comment.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <button class="tag is-delete"></button>
+            <button class="tag is-delete is-medium peach"></button>
           </form>
           </div>
         <% } %>
