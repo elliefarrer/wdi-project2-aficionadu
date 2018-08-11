@@ -3,7 +3,7 @@ $column-gap: 0.5rem;
 $section-padding: 0.5rem 0;
 $is-info: #01abaa;
 $is-warning: #fedc3d;
-$red: #fea680 !default;
+$is-danger: #fea680 !default;
 $navbar-item-hover-color: #ffffff;
 $navbar-item-hover-background-color: #01abaa;
 $footer-background-color: #fedc3d;
@@ -14,6 +14,15 @@ body {
   font-family: 'Oxygen', sans-serif;
   color: #000000;
   ////// HEADER
+  .is-info {
+    color: $is-info;
+  }
+  .is-danger {
+    color: $is-danger;
+  }
+  .is-warning {
+    background-color: $is-warning;
+  }
   .azure {
     background-color: #01abaa;
     color: #ffffff;
@@ -84,7 +93,7 @@ body {
   .columns {
     margin: 0;
     .title {
-      color: $is-info;
+      // color: $is-info;
     }
     .column {
       .is-large {

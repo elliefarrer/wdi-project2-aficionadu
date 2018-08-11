@@ -1,6 +1,12 @@
 body {
   font-family: 'Oxygen', sans-serif;
   color: #000000; }
+  body .is-info {
+    color: #01abaa; }
+  body .is-danger {
+    color: #fea680; }
+  body .is-warning {
+    background-color: #fedc3d; }
   body .azure {
     background-color: #01abaa;
     color: #ffffff;
@@ -41,8 +47,6 @@ body {
     margin: 0.25rem 0; }
   body .columns {
     margin: 0; }
-    body .columns .title {
-      color: #01abaa; }
     body .columns .column .is-large {
       margin: 1rem 0; }
     body .columns .column .badge {

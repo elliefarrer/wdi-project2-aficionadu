@@ -31,21 +31,18 @@
 
   <% if (user.type === 'reviewer') { %>
     <hr />
-
     <div class="field">
       <label class="label is-size-5" for="city">Town/City</label>
       <div class="control">
         <input class="input" type="text" name="city" value="<%= user.city %>">
       </div>
     </div>
-
     <div class="field">
       <label class="label is-size-5" for="dateOfBirth">Date of Birth</label>
       <div class="control">
         <input class="input" type="date" name="dateOfBirth" value="<%= user.dateOfBirth %>">
       </div>
     </div>
-
     <div class="field">
       <label class="label is-size-5" for="gender">Gender</label>
       <div class="control">
@@ -54,7 +51,6 @@
         <input type="radio" name="gender" value="Other">Other
       </div>
     </div>
-
     <div class="field">
       <label class="label is-size-5" for="personality">Pick three statements that describe you best</label>
       <div class="control">

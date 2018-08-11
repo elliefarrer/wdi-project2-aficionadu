@@ -1,49 +1,48 @@
+<div class="columns">
+  <div class="column is-one-third">
+    <div class="section">
+      <img src=<%= user.profilePic %> alt=<%= user.username %> />
+    </div>
+    <div class="section">
+      <% if (user.type === 'reviewer') { %>
+        <p><span><i class="fas fa-map-marker-alt"></i></span> <%= user.city %></p>
+        <p><%= user.gender %>, born <%= user.dateOfBirth %></p>
+        <% user.personality.forEach(feature => { %>
+          <p class="tag is-medium azure"><span><i class="fas fa-tags"></i></span><span><%= feature %></span></p>
+        <% }) %>
+      <% } %>
+    </div>
+    <div class="section">
+      <div class="level">
+        <a class="button peach" href="/users/<%= locals.currentUser.id %>/edit"><span class="icon is-small"><i class="fas fa-edit"></i></span><span>Edit</span></a>
 
-  <div class="columns">
-    <div class="column is-one-third">
-      <div class="section">
-        <img src=<%= user.profilePic %> alt=<%= user.username %> />
-      </div>
-      <div class="section">
-        <% if (user.type === 'reviewer') { %>
-          <p><span><i class="fas fa-map-marker-alt"></i></span> <%= user.city %></p>
-          <p><%= user.gender %>, born <%= user.dateOfBirth %></p>
-          <% user.personality.forEach(feature => { %>
-            <p class="tag is-medium azure"><span><i class="fas fa-tags"></i></span><span><%= feature %></span></p>
-          <% }) %>
-        <% } %>
-      </div>
-      <div class="section">
-        <div class="level">
-          <a class="button peach" href="/users/<%= locals.currentUser.id %>/edit"><span class="icon is-small"><i class="fas fa-edit"></i></span><span>Edit</span></a>
-
-        </div>
       </div>
     </div>
-
-    <div class="column is-two-thirds">
-      <h1 class="title is-1"><%= user.username %></h1>
-      <h2 class="subtitle is-3"><%= user.fullName %></h2>
-      <div class="section">
-        <h2 class="subtitle is-1">Badges</h2>
-        <% if (locals.currentUser.type === 'reviewer') { %>
-          <div class="columns">
-            <div class="column is-half has-text-left">
-              <img class="image is-medium badge" src="/images/badge-chatty.png" alt="Chatty Badge">
-              <caption>Earn this badge by posting ten reviews</caption>
-            </div>
-            <div class="column is-half has-text-left">
-              <img class="image is-medium badge" src="/images/badge-photographer.png" alt="Photographer Badge">
-              <caption>Earn this badge by updating ten photos</caption>
-            </div>
-          </div>
-        <% } %>
-      </div>
-      <hr />
-      <div class="section">
-        <h2 class="subtitle is-1">Activity</h2>
-        <p><%= user.username %>'s activity coming soon...</p>
-      </div>
-    </div>
-
   </div>
+
+  <div class="column is-two-thirds">
+    <h1 class="title is-1"><%= user.username %></h1>
+    <h2 class="subtitle is-3"><%= user.fullName %></h2>
+    <div class="section">
+      <h2 class="subtitle is-1">Badges</h2>
+      <% if (locals.currentUser.type === 'reviewer') { %>
+        <div class="columns">
+          <div class="column is-half has-text-left">
+            <img class="image is-medium badge" src="/images/badge-chatty.png" alt="Chatty Badge">
+            <caption>Earn this badge by posting ten reviews</caption>
+          </div>
+          <div class="column is-half has-text-left">
+            <img class="image is-medium badge" src="/images/badge-photographer.png" alt="Photographer Badge">
+            <caption>Earn this badge by updating ten photos</caption>
+          </div>
+        </div>
+      <% } %>
+    </div>
+    <hr />
+    <div class="section">
+      <h2 class="subtitle is-1">Activity</h2>
+      <p><%= user.username %>'s activity coming soon...</p>
+    </div>
+  </div>
+
+</div>
