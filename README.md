@@ -1,4 +1,4 @@
-# Aficionadu
+# General Assembly WDI Project 2: Aficionadu
 [Heroku](https://aficionadu.herokuapp.com/)
 
 [GitHub Repo](https://github.com/platypotomus/wdi-project2-aficionadu)
