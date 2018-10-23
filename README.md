@@ -173,3 +173,5 @@ There are a number of features I plan to add to Aficionadu, including:
 * Getting the badge system working.
 * A model with a carousel on the restaurant show pages, so users can view the photos clearly. This could also have the uploader's name, review, and timestamp.
 * Improved mobile responsiveness.
+
+![Footer](footer.png)
