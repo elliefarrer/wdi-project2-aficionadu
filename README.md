@@ -30,15 +30,7 @@ Aficionadu is my second project from General Assembly's Web Development Immersiv
 ## Comment Moderation Page
 ![Comment Moderation Page](screenshots/comment-moderation-final.png)
 
-## Featured Piece of Code no. 1
-A function to calculate a restaurant's average rating. From [models/restaurant.js](https://github.com/platypotomus/wdi-project2-aficionadu/blob/master/models/restaurant.js).
 
-```
-restaurantSchema.virtual('averageRating')
-  .get(function() {
-    return (this.comments.reduce((sum, comment) => sum + comment.rating, 0) / this.comments.length).toFixed(1);
-  });
-  ```
 
 ---
 ## Brief
@@ -117,12 +109,22 @@ I hit MVP after one day of coding. This met the brief (minus the Bulma styling),
 
 I next improved the reviewing experience, by allowing users to add a headline, a rating, and a photo with their review. Looking at TripAdvisor and Booking.com really inspired me to add more detail to this section. I also added a timestamp feature to the reviews.
 
+## Featured Piece of Code no. 1
+A function to calculate a restaurant's average rating. From [models/restaurant.js](https://github.com/platypotomus/wdi-project2-aficionadu/blob/master/models/restaurant.js).
+
+```javascript
+restaurantSchema.virtual('averageRating')
+  .get(function() {
+    return (this.comments.reduce((sum, comment) => sum + comment.rating, 0) / this.comments.length).toFixed(1);
+  });
+  ```
+
 Finally, I added review and photo moderation. This means that new reviews and photos do not appear on the main site until they have been approved by someone with a "moderator" type account. Moderators are able to delete reviews at this point.
 
 ## Featured Piece of Code no. 2
 This function sets a review's status to moderated when a moderator clicks the "approve" button. The review and photo now appear on the restaurant's page. From [controllers/commentController.js](https://github.com/platypotomus/wdi-project2-aficionadu/blob/master/controllers/commentController.js).
 
-```
+```javascript
 function commentsSetModerated(req, res, next) {
   Restaurant
     .findById(req.params.restaurantId)
